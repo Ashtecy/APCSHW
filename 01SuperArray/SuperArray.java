@@ -26,15 +26,41 @@ public class SuperArray{
     }
 
     public void add(Object e){
-	if (currentSize+2==A.length){
-	    Object[] B = new Object[currentSize+10];
-	    for(int i=0;i<currentSize;i++){
-		B[i]=A[i];
-	    }
-	    
+	if (currentSize==A.length){
+	    resize(currentSize*2);
 	}
 	currentSize++;
-	A[currentSize-1]=e;
+	A[currentSize-1]=e;;
+    }
+
+    public void resize(int newCapacity){
+	Object[] B = new Object[newCapacity];
+	for(int i=0;i<currentSize;i++){
+	    B[i]=A[i];
+	}
+	A=B;
+    }
+    
+    public void clear(){
+	Object[] B = new Object[10];
+	A=B;
+	currentSize=0;
     }
 	
+    public Object get(int index){
+	if (index<currentSize){
+	    return A[index];
+	}else{
+	    return "Error";
+	}
+    }
+    
+    public void set(int index, Object e){
+	if (index<currentSize){
+	    A[index]=e;
+	}else{
+	    System.out.println("error");
+	}
+    }
 }
+
