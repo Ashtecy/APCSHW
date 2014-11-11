@@ -15,7 +15,12 @@ public class Driver{
 	Alpha.add("infinity");
 	Alpha.set(5,5);
 	System.out.println(Alpha.get(5)+"\n"+Alpha.get(13));
+<<<<<<< HEAD:01SuperArray/Driver.java
 	Alpha.add(1,99);
+=======
+	Alpha.clear();
+>>>>>>> 91ac2b9932dff9b33302758f36b5bc64eb8de75b:01SuperArray/Driver
 	System.out.println(Alpha.toString());
     }
 }
+

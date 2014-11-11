@@ -33,6 +33,7 @@ public class SuperArray{
 	A[currentSize-1]=e;;
     }
 
+<<<<<<< HEAD
     public void add(int index,Object e){
 	if (currentSize==A.length){
 	    resize(currentSize*2);
@@ -50,6 +51,8 @@ public class SuperArray{
 	}
     }
 
+=======
+>>>>>>> 91ac2b9932dff9b33302758f36b5bc64eb8de75b
     public void resize(int newCapacity){
 	Object[] B = new Object[newCapacity];
 	for(int i=0;i<currentSize;i++){
@@ -62,6 +65,7 @@ public class SuperArray{
 	Object[] B = new Object[10];
 	A=B;
 	currentSize=0;
+<<<<<<< HEAD
     }
 	
     public Object get(int index){
@@ -99,6 +103,24 @@ public class SuperArray{
 	    }
 	}
 	return ret;
+=======
+>>>>>>> 91ac2b9932dff9b33302758f36b5bc64eb8de75b
     }
 	
+    public Object get(int index){
+	if (index<currentSize){
+	    return A[index];
+	}else{
+	    return "Error";
+	}
+    }
+    
+    public void set(int index, Object e){
+	if (index<currentSize){
+	    A[index]=e;
+	}else{
+	    System.out.println("error");
+	}
+    }
 }
+
