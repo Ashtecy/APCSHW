@@ -13,8 +13,9 @@ public class Driver{
 	Alpha.add(9);
 	Alpha.add(10);
 	Alpha.add("infinity");
+	Alpha.set(5,5);
+	System.out.println(Alpha.get(5)+"\n"+Alpha.get(13));
+	Alpha.add(1,99);
 	System.out.println(Alpha.toString());
-	System.out.println();
-	System.out.println(Beta.toString());
     }
 }
