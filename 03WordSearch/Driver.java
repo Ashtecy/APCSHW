@@ -1,10 +1,18 @@
+import java.io.*;
+import java.util.*;
+
 public class Driver{
-    public static void main(String[]args){
-	WordGrid A = new WordGrid(5,5);
-	A.addHorizontal("demo",1,1);
-	A.addVertical("bane",0,1);
-	A.addDiagonal("ayy",1,2);
-	System.out.println(A.toString());
+    public static void main(String[]args)throws FileNotFoundException{
+	WordGrid A = new WordGrid(10,10);
+	File text = new File("Words.txt");
+	Scanner in = new Scanner(text);
+	ArrayList<String> words = new ArrayList<String>();
+	while(in.hasNextLine()){
+	    words.add(in.nextLine());
+	}
+	for(int i=0;i<words.size();i++){
+	    System.out.println(words.get(i));
+	}
 
 
 
