@@ -4,20 +4,20 @@ import java.util.*;
 public class Driver{
     public static void main(String[]args)throws FileNotFoundException{
 	WordGrid A = new WordGrid(10,10);
+	
 	File text = new File("Words.txt");
 	Scanner in = new Scanner(text);
-	ArrayList<String> words = new ArrayList<String>();
+	
+	ArrayList<String> wordsAll = new ArrayList<String>();
 	while(in.hasNextLine()){
-	    words.add(in.nextLine());
+	    wordsAll.add(in.nextLine());
 	}
-	for(int i=0;i<words.size();i++){
-	    System.out.println(words.get(i));
+	for(int i=0;i<wordsAll.size();i++){
+	    wordsAll.set(i,wordsAll.get(i).toUpperCase());
 	}
-
-
-
-
-
-
+        
+	System.out.println(A.toString());
+	A.createSearch(wordsAll);
+	
     }
 }
