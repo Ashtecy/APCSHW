@@ -14,9 +14,10 @@ public class OrderedSuperArray extends SuperArray{
 	}
     }
 
-    public void insertionSort(){
+    /**public void insertionSort(){
 	int j=2;
 	for(int i=1;i<;i++){
 	    if A[i].compareTo()
     }
+    */
 }

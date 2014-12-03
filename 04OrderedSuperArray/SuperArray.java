@@ -25,7 +25,7 @@ public class SuperArray{
 	return currentSize;
     }
 
-    public void add(Object e){
+    public void add(String e){
 	if (currentSize==A.length){
 	    resize(currentSize*2);
 	}
@@ -33,7 +33,7 @@ public class SuperArray{
 	A[currentSize-1]=e;;
     }
 
-    public void add(int index,Object e){
+    public void add(int index,String e){
 	if (currentSize==A.length){
 	    resize(currentSize*2);
 	}
@@ -73,7 +73,7 @@ public class SuperArray{
 	}
     }
     
-    public String set(int index,Object e){
+    public String set(int index,String e){
 	String ret;
 	if (index<currentSize){
 	    ret=A[index];
@@ -101,20 +101,5 @@ public class SuperArray{
 	}
 	return ret;
     }
-	
-    public String get(int index){
-	if (index<currentSize){
-	    return A[index];
-	}else{
-	    return "Error";
-	}
-    }
-    
-    public void set(int index, Object e){
-	if (index<currentSize){
-	    A[index]=e;
-	}else{
-	    System.out.println("error");
-	}
-    }
+  
 }
