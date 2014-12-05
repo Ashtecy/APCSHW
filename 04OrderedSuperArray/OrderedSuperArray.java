@@ -20,4 +20,16 @@ public class OrderedSuperArray extends SuperArray{
 	    if A[i].compareTo()
     }
     */
+    
+    public void selectionSort(){
+	for(int i=0;i<size();i++){
+	    String ins=data.get(i);
+	    for(int j=i;j<size();j++){
+		if(ins.compareTo(data.get(j))>0){
+		    ins=data.get(j);
+		}
+	    super.add(i,ins);
+	    }
+	}
+    }
 }
