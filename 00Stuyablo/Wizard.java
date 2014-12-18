@@ -1,0 +1,51 @@
+import java.util.Random;
+public class Wizard extends Adventurer{
+    
+    private int mana;
+
+    public Wizard(String s){
+	super(s,20,8,8,8);
+	mana = this.getInt()*2;
+    }
+    public Wizard(){
+	this("Cirius");
+    }
+    
+    public String getStats(){
+	return "Wizard"+"\n"
+	    +super.getStats()+"\n"
+	    +"Mana: "+mana; 
+    }
+
+    public void attack(Adventurer other){
+	System.out.println(this.getName() + " attacks " + other.getName());
+	if (hit(other)){
+	    Random rand = new Random();
+	    int damage = rand.nextInt(this.getStr()/2)+2;
+	    other.setHP(other.getHP()-damage);
+	    System.out.println("And deals "+damage+" points of damage");
+	}else{
+	    System.out.println("But misses");
+	};
+	mana+=4;
+    }
+   
+    public void specialAttack(Adventurer other){
+	if (mana>=10){
+	    System.out.println(this.getName()+" hurls a ball of energy at "+other.getName());
+	    if (hit(other)){
+		Random rand = new Random();
+		int damage = rand.nextInt(this.getInt()-12)+12;
+		other.setHP(other.getHP()-damage);
+		System.out.println("And deals "+damage+" points of damage");
+	    }else{
+		System.out.println("But misses");
+	    }  
+	    mana-=10;
+	}else{
+	    System.out.println(this.getName()+" does not poessess enough mana to conjure a ball of energy against "+other.getName());
+	    System.out.println("Instead");
+	    attack(other);
+	}
+    }
+}
