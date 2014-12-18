@@ -10,6 +10,14 @@ public class Sorts{
 	}
 	return A;
     }
+
+    public static int[] copyArray(int[]A){
+	int[]B=new int[A.length];
+	for(int i=0;i<A.length;i++){
+	    B[i]=A[i];
+	}
+	return B;
+    }
     
     public static String toString(int[]A){
 	String printA="[";
@@ -38,11 +46,25 @@ public class Sorts{
 
     public static void insertionSort(int[]A){
 	for(int i=1;i<A.length;i++){
+	    int tracker = A[i];
+	    int j;
+	    for(j=i-1;(j>=0) && (tracker<A[j]);j--){
+		A[j+1]=A[j];
+	    }
+	    A[j+1]=tracker;
 	}
     }
 
-
     public static void selectionSort(int[]A){
+	for(int i=0;i<A.length-1;i++){
+	    int tracker = i;
+	    for(int j=i+1;j<A.length;j++){
+		if(A[j]<A[tracker]){
+		    tracker=j;
+		}
+	    }
+	    swap(A,tracker,i);
+	}
     }
     
 
